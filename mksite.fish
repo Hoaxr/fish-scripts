@@ -24,8 +24,8 @@ function mksite --description 'De ultieme webproject builder gesynchroniseerd me
     echo ""
     echo "Kies de gewenste structuur voor je nieuwe project:"
     echo "------------------------------------------------------------------------"
-    echo "  [1] Express.js Monolith (Production-Ready) ⚡"
-    echo "  [2] Vite Front-end (Vanilla JS)"
+    echo "  [1] Vite Front-end (Vanilla JS)"
+    echo "  [2] Express.js Monolith (Production-Ready) ⚡"
     echo "  [3] Full-stack Split (Express API + Vite Vanilla JS) 🔥"
     echo "  [4] Premium Full-stack (Express API + Vite React + Tailwind CSS) 🔥"
     echo "------------------------------------------------------------------------"
@@ -154,7 +154,7 @@ NODE_ENV=development" > .env
     end
 
     # 4. TEMPLATE LOGICA
-    if string match -q "*1*" "$TEMPLATE_CHOICE"
+    if string match -q "*2*" "$TEMPLATE_CHOICE"
         echo "[+] Productie-ready Express.js Monolith opbouwen..."
         mkdir -p public server
         builtin cd server
@@ -191,7 +191,7 @@ NODE_ENV=development" > .env
 }' > package.json
         npm install --silent
 
-    else if string match -q "*2*" "$TEMPLATE_CHOICE"
+    else if string match -q "*1*" "$TEMPLATE_CHOICE"
         echo "[+] Vite Front-end template opbouwen..."
         echo '{
   "name": "'$PROJECT_NAME'",
