@@ -1,7 +1,8 @@
 function mksite --description 'De ultieme webproject builder gesynchroniseerd met het start-script'
     clear
     echo "========================================================================"
-    echo "          🚀 WELKOM BIJ DE ULTIEME WEBPROJECT BUILDER [v5.4]"
+    echo "                     🚀 WEBFORGE CLI [v1.0] "
+    echo "              De razendsnelle webproject generator"
     echo "========================================================================"
     echo ""
 
