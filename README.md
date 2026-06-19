@@ -1,4 +1,4 @@
-# Mksite (Fish Shell Web Builder)
+# Fish Scripts (mksite & start)
 
 `mksite` is een interactieve, razendsnelle webproject-builder geschreven in Fish shell.
 
