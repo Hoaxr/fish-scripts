@@ -1,4 +1,4 @@
-# Fish Scripts (mksite & start)
+# WebForge CLI & Start
 
 Een verzameling van twee krachtige, native Fish shell scripts die de web-development workflow drastisch versnellen. 
 
@@ -30,7 +30,7 @@ Geen zin meer om handmatig mappen te openen en poorten te zoeken? `start` neemt 
 
 ## ⚙️ Auto-Sync Workflow (Systemd)
 Deze repository onderhoudt zichzelf! 
-Op de achtergrond draait een `systemd` user-service (`fish-scripts-sync.path`). Zodra je één van de originele bestanden (`~/.config/fish/functions/mksite.fish` of `start.fish`) bewerkt en opslaat, springt de watcher aan.
+Op de achtergrond draait een `systemd` user-service (`webforge-sync.path`). Zodra je één van de originele bestanden (`~/.config/fish/functions/mksite.fish` of `start.fish`) bewerkt en opslaat, springt de watcher aan.
 Hij kopieert het script, maakt een commit, en pusht de wijzigingen geruisloos naar GitHub. 
 
 Je hoeft zelf dus **nooit** handmatig te pushen!
