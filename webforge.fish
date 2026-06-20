@@ -87,7 +87,12 @@ function _webforge_start_menu
     echo "========================================================================"
 
     echo -n "Typ het cijfer van je project (of 'q' om te stoppen): "
-    read -l keuze
+    if not read -l keuze
+        echo ""
+        echo "[+] Geannuleerd."
+        builtin cd $OUDE_MAP >/dev/null
+        return 1
+    end
 
     if test "$keuze" = "q"
         echo "[+] Geannuleerd."
@@ -116,7 +121,11 @@ function _webforge_create
     echo "========================================================================"
     echo ""
 
-    read -l -p 'echo "Voer de projectnaam in: "' PROJECT_NAME
+    if not read -l -p 'echo "Voer de projectnaam in: "' PROJECT_NAME
+        echo ""
+        echo "[-] Geannuleerd."
+        return 1
+    end
     set PROJECT_NAME (string trim "$PROJECT_NAME")
     if test -z "$PROJECT_NAME"
         echo "[-] Fout: Projectnaam is verplicht."
@@ -151,7 +160,11 @@ function _webforge_create
     echo "      - Vite frontend mét React en pre-configured Tailwind CSS."
     echo "      - Modern vormgegeven boilerplate startscherm."
     echo "------------------------------------------------------------------------"
-    read -l -p 'echo "Kies een optie [1-4]: "' TEMPLATE_CHOICE
+    if not read -l -p 'echo "Kies een optie [1-4]: "' TEMPLATE_CHOICE
+        echo ""
+        echo "[-] Geannuleerd."
+        return 1
+    end
     set TEMPLATE_CHOICE (string trim "$TEMPLATE_CHOICE")
 
     function _find_free_port -a START_PORT
